@@ -1,0 +1,53 @@
+$primary-color: #2ecc71;
+$secondary-color: #e67e22;
+$background-color: #0f0f0f;
+$text-color: #f0f0f0;
+$shadow-color: #000000;
+$input-bg: #1a1a1a;
+
+.search-box {
+  width: 320px;
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: $background-color;
+  border: 2px solid $primary-color;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba($primary-color, 0.5),
+    0 3px 10px rgba($shadow-color, 0.6);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 20px rgba($primary-color, 0.8),
+      0 6px 18px rgba($shadow-color, 0.7);
+  }
+}
+
+.search-label {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $secondary-color;
+  margin-bottom: 0.5rem;
+}
+
+.search-field {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid $secondary-color;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: $input-bg;
+  color: $text-color;
+  outline: none;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $primary-color;
+    box-shadow: 0 0 6px rgba($primary-color, 0.5);
+  }
+
+  &:hover {
+    border-color: $primary-color;
+  }
+}

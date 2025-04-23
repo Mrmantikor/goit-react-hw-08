@@ -1,0 +1,11 @@
+$primary-color: #2ecc71;
+
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(225px, 2fr));
+  gap: 2rem;
+  padding: 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
+  background: transparent;
+}

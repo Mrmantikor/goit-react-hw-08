@@ -24,15 +24,8 @@ const App = () => {
 
   if (isRefreshing) {
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100vh',
-        }}
-      >
-        <PuffLoader color="#36d7b7" size={60} />
+      <div>
+        <PuffLoader />
       </div>
     );
   }

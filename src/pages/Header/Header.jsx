@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { FiLogIn, FiLogOut } from 'react-icons/fi';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout } from '../../redux/auth/operations';
+import { AppBar, Toolbar, Box, Button } from '@mui/material';
 import s from './Header.module.scss';
 
 const Header = () => {
@@ -15,52 +16,56 @@ const Header = () => {
   };
 
   const handleLoginClick = () => {
-    if (!isAuthenticated) {
-      navigate('/login');
-    }
+    navigate('/login');
   };
 
   return (
-    <header className={s.header}>
-      <nav className={s.header__nav}>
-        <div className={s.header__links}>
-          <NavLink
+    <AppBar className={s.header} disableGutters>
+      <Toolbar className={s.header__nav} disableGutters>
+        <Box className={s.header__links}>
+          <Button
+            component={NavLink}
             to="/"
-            className={({ isActive }) =>
-              isActive
-                ? `${s.header__link} ${s['header__link--active']}`
-                : s.header__link
-            }
+            className={s.header__link}
+            classes={{ root: s.header__link, text: s.header__link }}
           >
             Home
-          </NavLink>
-          <NavLink
+          </Button>
+          <Button
+            component={NavLink}
             to="/contacts"
-            className={({ isActive }) =>
-              isActive
-                ? `${s.header__link} ${s['header__link--active']}`
-                : s.header__link
-            }
+            className={s.header__link}
+            classes={{ root: s.header__link, text: s.header__link }}
           >
             Contacts
-          </NavLink>
-        </div>
+          </Button>
+        </Box>
 
-        <div className={s.header__auth}>
+        <Box className={s.header__auth}>
           {!isAuthenticated ? (
-            <button onClick={handleLoginClick} className={s.header__button}>
-              <FiLogIn className={s.header__icon} />
+            <Button
+              onClick={handleLoginClick}
+              className={s.header__button}
+              classes={{ root: s.header__button, text: s.header__button }}
+              startIcon={<FiLogIn className={s.header__icon} />}
+              aria-label="Login"
+            >
               Login
-            </button>
+            </Button>
           ) : (
-            <button onClick={handleLogout} className={s.header__button}>
-              <FiLogOut className={s.header__icon} />
+            <Button
+              onClick={handleLogout}
+              className={s.header__button}
+              classes={{ root: s.header__button, text: s.header__button }}
+              startIcon={<FiLogOut className={s.header__icon} />}
+              aria-label="Logout"
+            >
               Logout
-            </button>
+            </Button>
           )}
-        </div>
-      </nav>
-    </header>
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 };
 

@@ -1,0 +1,137 @@
+$primary-color: #2ecc71;
+$secondary-color: #f57c00;
+$background-color: #0f0f0f;
+$text-color: #f0f0f0;
+$shadow-color: #000000;
+$gradient-start: rgba(20, 20, 20, 0.9);
+$gradient-end: rgba(10, 10, 10, 0.7);
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: $background-color;
+  background-image: linear-gradient(135deg, $gradient-start, $gradient-end);
+  padding: 1.25rem;
+  box-shadow: inset 0 0 20px rgba($primary-color, 0.1);
+  transition: all 0.3s ease;
+}
+
+.registration:hover {
+  box-shadow: inset 0 0 30px rgba($primary-color, 0.2);
+}
+
+.registration__back {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+.registration__form {
+  background: linear-gradient(
+    135deg,
+    rgba(30, 30, 30, 0.9),
+    rgba(20, 20, 20, 0.7)
+  );
+  border-radius: 0.5rem;
+  box-shadow: 0 0 20px rgba($primary-color, 0.8),
+    0 0 40px rgba($primary-color, 0.6), inset 0 0 15px rgba($primary-color, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease;
+}
+
+.registration__form:hover {
+  box-shadow: 0 0 30px rgba($primary-color, 0.9),
+    0 0 50px rgba($primary-color, 0.7), inset 0 0 20px rgba($primary-color, 0.2);
+  transform: scale(1.02);
+}
+
+.registration__title {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    45deg,
+    $secondary-color,
+    $primary-color,
+    #7e57c2,
+    #80d8ff
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba($shadow-color, 0.7);
+  animation: gradientMove 3s ease infinite;
+}
+
+.registration__button {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  animation: pulseGlow 1.5s ease infinite;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-size: 200%;
+}
+
+.registration__button--back {
+  background: linear-gradient(45deg, $primary-color, $secondary-color);
+  border: 2px solid $primary-color;
+  background-clip: padding-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s ease infinite;
+}
+
+.registration__button--back:hover {
+  background: linear-gradient(
+    45deg,
+    darken($primary-color, 10%),
+    darken($secondary-color, 10%)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 0 0 30px rgba($primary-color, 0.8),
+    inset 0 0 10px rgba($text-color, 0.4);
+  transform: scale(1.2) translateY(-6px);
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba($primary-color, 0.3);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba($primary-color, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 5px rgba($primary-color, 0.3);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

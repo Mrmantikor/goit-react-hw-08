@@ -1,0 +1,80 @@
+$primary-color: #2ecc71;
+$secondary-color: #e67e22;
+$background-color: #0f0f0f;
+$text-color: #f0f0f0;
+$shadow-color: #000000;
+$gradient-start: rgba(20, 20, 20, 0.9);
+$gradient-end: rgba(10, 10, 10, 0.7);
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+  min-height: 100vh;
+  background: $background-color;
+  background-image: linear-gradient(135deg, $gradient-start, $gradient-end);
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: inset 0 0 20px rgba($primary-color, 0.2);
+  }
+}
+
+.contacts__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(
+    45deg,
+    $primary-color,
+    $secondary-color,
+    $text-color
+  );
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba($shadow-color, 0.7);
+  animation: gradientMove 4s ease infinite;
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-shadow: 0 0 15px rgba($primary-color, 0.8),
+      0 0 20px rgba($secondary-color, 0.5);
+    transform: scale(1.05);
+  }
+}
+
+.contacts__subtitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, $secondary-color, $primary-color);
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba($shadow-color, 0.7);
+  animation: gradientMove 4s ease infinite;
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-shadow: 0 0 15px rgba($primary-color, 0.8);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

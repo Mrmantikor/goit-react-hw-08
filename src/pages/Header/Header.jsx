@@ -20,8 +20,8 @@ const Header = () => {
   };
 
   return (
-    <AppBar className={s.header} disableGutters>
-      <Toolbar className={s.header__nav} disableGutters>
+    <AppBar className={s.header}>
+      <Toolbar className={s.header__nav}>
         <Box className={s.header__links}>
           <Button
             component={NavLink}
